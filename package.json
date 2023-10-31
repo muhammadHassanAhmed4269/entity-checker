@@ -1,0 +1,19 @@
+{
+  "name": "entity-checker",
+  "version": "1.0.0",
+  "description": "The entity-checker library is a lightweight utility for handling and detecting 'not found' scenarios in JavaScript applications. It provides a set of helper methods to determine if a given entity is null, undefined, an empty array, or an empty object, simplifying the process of checking for missing or empty data. This library enhances code readability and maintainability by encapsulating the logic for common 'not found' checks.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Muhammad Hassan Ahmed",
+  "license": "MIT",
+  "keywords": [
+    "entity",
+    "utility",
+    "not found",
+    "JavaScript",
+    "library"
+  ],
+  "readme": "# entity-checker\n\n[![npm version](https://badge.fury.io/js/entity-checker.svg)](https://badge.fury.io/js/entity-checker)\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\n\nA lightweight utility for handling 'not found' scenarios in JavaScript applications. This library provides helper methods to determine if a given entity is null, undefined, an empty array, or an empty object, simplifying the process of checking for missing or empty data. Enhance your code readability and maintainability by encapsulating the logic for common 'not found' checks.\n\n## Installation\n\nYou can install the library via npm:\n\n```bash\nnpm install entity-checker\n```\n\n## Usage\n\n```javascript\nconst notFoundUtil = require('entity-checker');\n\n// Example usage\nclass Library {\n  constructor() {\n    this.data = [];\n  }\n\n  fetchData() {\n    // Fetch data logic\n    return this.data;\n  }\n\n  processData() {\n    const data = this.fetchData();\n\n    if (notFoundUtil.isNotFound(data)) {\n      console.log('Data not found or empty.');\n    } else {\n      console.log('Data found:', data);\n    }\n  }\n}\n```\n\n## API\n\n### `isNotFound(entity)`\n\nCheck if the provided entity is null, undefined, an empty array, or an empty object.\n\n- **Parameters:**\n  - `entity` (any): The entity to check.\n\n- **Returns:**\n  - `true` if the entity is null, undefined, an empty array, or an empty object.\n  - `false` otherwise.\n\n## Contributing\n\nContributions are welcome! Feel free to open an issue or submit a pull request.\n\n## License\n\nThis project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details."
+}
