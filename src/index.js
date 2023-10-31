@@ -1,17 +1,4 @@
 class EntityChecker {
-  // Method to check if the provided entity is null, undefined, NaN, zero, false, an empty array, an array with empty strings, or an empty object
-  isNotFound(entity) {
-    return (
-      this._isNull(entity) ||
-      this._isUndefined(entity) ||
-      this._isNaN(entity) ||
-      this._isZero(entity) ||
-      this._isFalse(entity) ||
-      this._isEmptyArray(entity) ||
-      this._isEmptyObject(entity)
-    );
-  }
-
   // Private method to check if the entity is null
   _isNull(entity) {
     return entity === null;
@@ -49,8 +36,26 @@ class EntityChecker {
   _isEmptyObject(entity) {
     return typeof entity === "object" && Object.keys(entity).length === 0;
   }
+
+  // Method to check if the provided entity is null, undefined, NaN, zero, false, an empty array, an array with empty strings, or an empty object
+  isNotFound(entity) {
+    return (
+      this._isNull(entity) ||
+      this._isUndefined(entity) ||
+      this._isNaN(entity) ||
+      this._isZero(entity) ||
+      this._isFalse(entity) ||
+      this._isEmptyArray(entity) ||
+      this._isEmptyObject(entity)
+    );
+  }
 }
 
 const entityChecker = new EntityChecker();
 
-module.exports = entityChecker;
+// Public API object containing only the desired method
+const publicAPI = {
+  isNotFound: entityChecker.isNotFound.bind(entityChecker),
+};
+
+module.exports = publicAPI;

@@ -1,4 +1,4 @@
-const notFoundUtil = require("../entity-checker");
+const notFoundUtil = require("../index");
 
 test("checks if null is not found", () => {
   const checker = notFoundUtil;
